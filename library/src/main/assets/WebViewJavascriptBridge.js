@@ -106,6 +106,7 @@
             handlerName: handlerName,
             data: data
         }, responseCallback);
+
     }
 
     //sendMessage add message, 触发native处理 sendMessage

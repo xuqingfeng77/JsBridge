@@ -50,7 +50,15 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		button.setOnClickListener(this);
 
-		webView.setDefaultHandler(new DefaultHandler());
+		webView.setDefaultHandler(new DefaultHandler() {
+			@Override
+			public void handler(String data, CallBackFunction function) {
+				Log.i(TAG, "setDefaultHandler =  data from web = " + data);
+				if (function != null) {
+					function.onCallBack("DefaultHandler response data");
+				}
+			}
+		});
 
 		webView.setWebChromeClient(new WebChromeClient() {
 
